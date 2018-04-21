@@ -19,7 +19,7 @@ constructor() {
 
     _getNotes() {
         if(this.state.selectedTask === null) {
-            window.location = '/login';
+            window.location = '/#/login';
         }
 
         let user = JSON.parse(sessionStorage.getItem('user'));
@@ -31,7 +31,7 @@ constructor() {
         }).then((response) => {
             if (response.message) {
                 alert(response.message);
-                window.location = '/login';
+                window.location = '/#/login';
             } else {
                 this.setState({notes: response});
                 this.setState({loggedUser: <p>Welcome, {user.username}! | <a href="#" onClick={this._logout.bind(this)}>Log Out</a></p>})
@@ -76,7 +76,7 @@ constructor() {
         }).then(function(response) {
             sessionStorage.removeItem('user');
             sessionStorage.removeItem('task');
-            window.location = '/login'; 
+            window.location = '/#/login'; 
         });
     }
 

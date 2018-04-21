@@ -25,7 +25,7 @@ export class Register extends React.Component {
                 this.setState({message: response.error});
             } else {
                 sessionStorage.setItem('user', JSON.stringify(response));
-                window.location = '/tasks';
+                window.location = '/#/tasks';
             }
         });
 

@@ -25,7 +25,7 @@ export class Login extends React.Component {
                 this.setState({message: response.error});
             } else {
                 sessionStorage.setItem('user', JSON.stringify(response));
-                window.location = '/tasks';
+                window.location = '/#/tasks';
             }
         });
 
@@ -37,7 +37,7 @@ export class Login extends React.Component {
         const sessionUser = sessionStorage.getItem('user');    
         const user = (sessionUser !== null) ? JSON.parse(sessionUser) : {};
         if(user.username !== undefined) {
-            window.location = '/tasks';
+            window.location = '/#/tasks';
         }
 
         const logoutMessage = sessionStorage.getItem('message');

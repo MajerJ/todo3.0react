@@ -28,7 +28,7 @@ export class Tasks extends React.Component {
 
     _getTasks() {        
         if(this.state.user.username === undefined) {
-            window.location = '/login';
+            window.location = '/#/login';
         }
 
         $.ajax({
@@ -39,7 +39,7 @@ export class Tasks extends React.Component {
             if(response.message) {
                 alert(response.message);
                 sessionStorage.removeItem('user');
-                window.location = '/login';
+                window.location = '/#/login';
             } else {
                 this.setState({tasks: response});
                 this.setState({loggedUser: <p>Welcome, {this.state.user.username}! | <a href="#" onClick={this._logout.bind(this)}>Log Out</a></p>})
@@ -188,7 +188,7 @@ export class Tasks extends React.Component {
             sessionStorage.removeItem('user');
             sessionStorage.removeItem('task');
             sessionStorage.setItem('message', response);
-            window.location = '/login'; 
+            window.location = '/#/login'; 
         });
     }
 
